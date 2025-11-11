@@ -1,32 +1,37 @@
+/* ====== BASIC PAGE STYLE ====== */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background: #fff7e6;
+  background: #f8fafc;
   color: #333;
+  line-height: 1.6;
 }
 
 .wrap {
   width: 90%;
-  max-width: 900px;
-  margin: 30px auto;
+  max-width: 960px;
+  margin: 40px auto;
   background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 25px 35px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
+
+/* ====== HEADER ====== */
 .header-bg {
   position: relative;
-  height: 400px;
+  height: 350px;
   border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
 }
 
 .header-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.75);
   position: absolute;
   top: 0;
   left: 0;
@@ -35,83 +40,145 @@ body {
 
 .header-text {
   position: relative;
-  z-index: 2;
   text-align: center;
-  color: #FFF6D1;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+  color: #fff;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-
-header {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-header h1 {
-  color: #1e40af;
-}
-
-.scene {
-  margin-bottom: 30px;
-  padding: 15px;
-  border-left: 5px solid #3b82f6;
-  background: #f9fafb;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s;
-}
-
-.scene:hover {
-  transform: translateY(-5px);
-}
-
-.scene h2 {
-  color: #2563eb;
+.header-text h1 {
+  font-size: 38px;
   margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 
+.header-text p {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+/* ====== SCENE STYLE ====== */
+.scene, .moral-section, .author-section, .reflection-section {
+  background: #f9fafb;
+  margin-bottom: 35px;
+  padding: 25px;
+  border-left: 6px solid #3b82f6; /* default, will override for author/reflection */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scene:hover, .moral-section:hover, .author-section:hover, .reflection-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.scene h2, .moral-section h2, .author-section h2, .reflection-section h2 {
+  color: #1e40af; /* default, override for others */
+  margin-bottom: 18px;
+  border-bottom: 2px solid #93c5fd;
+  padding-bottom: 6px;
+}
+
+/* ====== MEDIA (SIDE-BY-SIDE) ====== */
 .media {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
   align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
 .media img {
   width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 420px;
+  border-radius: 12px;
+  border: 3px solid #e0e7ff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .media img:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .text {
   flex: 1;
+  color: #374151;
+  font-size: 16px;
 }
 
+/* ====== BUTTON ====== */
 .button {
+  display: inline-block;
   background: linear-gradient(90deg, #3b82f6, #06b6d4);
   color: white;
-  padding: 8px 14px;
-  border-radius: 6px;
+  padding: 10px 18px;
+  border-radius: 8px;
   text-decoration: none;
-  transition: opacity 0.3s;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .button:hover {
-  opacity: 0.85;
+  background: linear-gradient(90deg, #2563eb, #0891b2);
+  transform: scale(1.05);
 }
 
+/* ====== MORAL, AUTHOR, REFLECTION SPECIFIC COLORS ====== */
+.moral-section {
+  border-left-color: #3b82f6;
+}
+
+.moral-section h2 {
+  color: #1d4ed8;
+  border-bottom-color: #93c5fd;
+}
+
+.author-section {
+  border-left-color: #3b82f6;
+}
+
+.author-section h2 {
+  color: #1d4ed8;
+  border-bottom-color: #93c5fd;
+}
+
+.reflection-section {
+  border-left-color: #3b82f6;
+}
+
+.reflection-section h2 {
+  color: #1d4ed8;
+  border-bottom-color: #93c5fd;
+}
+
+/* ====== FOOTER ====== */
 footer {
   text-align: center;
+  background: #f1f5f9;
+  padding: 18px;
+  border-radius: 8px;
   font-size: 14px;
-  color: gray;
-  margin-top: 25px;
+  color: #555;
+  margin-top: 40px;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 700px) {
+  .media {
+    flex-direction: column !important;
+  }
+
+  .header-text h1 {
+    font-size: 28px;
+  }
+
+  .wrap {
+    padding: 15px 20px;
+  }
 }
